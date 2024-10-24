@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завдання 3.6 - Складання двох чисел ПІ21-03 Гавадз</title>
+    <script>
+        function addNumbers() {
+            // Запитуємо два числа у користувача
+            var num1 = parseFloat(prompt("Введіть перше число:"));
+            var num2 = parseFloat(prompt("Введіть друге число:"));
+
+            // Перевірка на валідність введення
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var sum = num1 + num2; // Складаємо два числа
+                alert("Сума: " + sum); // Виводимо результат
+            } else {
+                alert("Будь ласка, введіть коректні числа."); // Повідомлення про помилку
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Завдання 3.6</h1>
+    <hr>
+    <button onclick="addNumbers();">Скласти два числа</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайд-шоу</title>
+</head>
+<body>
+
+    <div>
+        <img id="slideshowImage" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Слайд" style="width: 400px; height: 300px;">
+        <button id="nextButton">Наступне зображення</button>
+    </div>
+
+    <script>
+        const images = [
+            'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', 
+            'https://images.unsplash.com/photo-1494235386404-517eaa71b164', 
+            'https://images.unsplash.com/photo-1496311084057-6e2d9be4d31d'
+        ];
+        let currentIndex = 0;
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % images.length; // Перехід до наступного зображення
+            document.getElementById('slideshowImage').src = images[currentIndex];
+        });
+    </script>
+
+</body>
+</html>

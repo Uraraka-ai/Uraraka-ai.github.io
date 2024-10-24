@@ -1,0 +1,196 @@
+/* Загальний стиль для сторінки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left {
+    background-image: url('left.png'); /* Використання зображення left.png */
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Напівпрозорий чорний фон */
+    z-index: 1;
+}
+
+.branding {
+    position: absolute;
+    top: 23px;
+    left: 45px;
+    width: 123px;
+    height: 62.3px;
+    color: #FFFDFD;
+    font-family: 'cassadio';
+    font-size: 41.53px;
+    font-weight: 400;
+    line-height: 62.68px;
+    z-index: 2;
+    opacity: 1;
+}
+
+.social-signup {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 2px solid #00aaff;
+    font-size: 15px;
+    line-height: 17.58px;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #707070;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    background-color: white;
+}
+
+.social-btn img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.social-btn:hover {
+    background-color: #00aaff;
+    color: white;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    position: relative;
+}
+
+.angle-left-bottom, .angle-right-top {
+    position: absolute;
+    width: 141.11px;
+    height: 146.98px;
+    z-index: 1;
+}
+
+.angle-left-bottom {
+    bottom: 0;
+    left: 0;
+}
+
+.angle-right-top {
+    top: 0;
+    right: 0;
+}
+
+.signup-box {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+h2 {
+    color: #4F4F4F;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 45px;
+    line-height: 52.73px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    color: #4F4F4FCC;
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-size: 25px;
+    line-height: 29.3px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #777;
+    text-align: left;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+.signup-btn {
+    padding: 15px;
+    background-color: #0077b5;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.signup-btn:hover {
+    background-color: #005f8a;
+}

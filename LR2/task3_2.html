@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+</head>
+<body>
+
+    <button id="openDocumentButton">Відкрити другий документ</button>
+
+    <script>
+        document.getElementById('openDocumentButton').addEventListener('click', function() {
+            const confirmation = confirm("Ви хочете відкрити другий документ?");
+            if (confirmation) {
+                window.open('second-document.html'); // Замість 'second-document.html' використовуйте реальний шлях до другого документа
+            }
+        });
+    </script>
+
+</body>
+</html>

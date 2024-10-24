@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завдання 3.7 - Найбільше число ПІ21-03 Гавадз</title>
+    <script>
+        function findMaxNumber() {
+            // Запитуємо два числа у користувача
+            var num1 = parseFloat(prompt("Введіть перше число:"));
+            var num2 = parseFloat(prompt("Введіть друге число:"));
+
+            // Перевірка на валідність введення
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Знаходимо найбільше число
+                var maxNum = Math.max(num1, num2);
+                // Виводимо результат у вікні браузера
+                document.body.innerHTML += "<p>Найбільше число: " + maxNum + "</p>";
+            } else {
+                alert("Будь ласка, введіть коректні числа."); // Повідомлення про помилку
+            }
+        }
+    </script>
+</head>
+<body onload="findMaxNumber();">
+    <h1>Завдання 3.7</h1>
+    <hr>
+</body>
+</html>

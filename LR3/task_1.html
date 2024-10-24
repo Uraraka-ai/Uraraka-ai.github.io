@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга Інформація</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #book-info {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="book-info"></div>
+    <button id="toggle-read">Показати інформацію про книгу</button>
+
+    <script>
+        // 1. Створити об'єкт book з властивостями
+        let book = {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: "J.K. Rowling",
+            year: 1997,
+            isRead: false,
+
+            // 2. Додати метод bookInfo
+            bookInfo: function() {
+                return `Назва: ${this.title}, Автор: ${this.author}, Рік видання: ${this.year}, Прочитана: ${this.isRead ? "Так" : "Ні"}`;
+            }
+        };
+
+        // Функція для відображення інформації про книгу
+        function displayBookInfo() {
+            const bookInfoDiv = document.getElementById('book-info');
+            bookInfoDiv.innerText = book.bookInfo();
+        }
+
+        // Додавання обробника події до кнопки
+        document.getElementById('toggle-read').addEventListener('click', function() {
+            displayBookInfo(); // Відображення інформації про книгу
+            book.isRead = !book.isRead; // Зміна статусу прочитано
+        });
+    </script>
+</body>
+</html>

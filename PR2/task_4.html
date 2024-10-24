@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обробка даних про книги</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Непрочитані книги</h2>
+    <pre id="unread-books"></pre>
+
+    <h2>Книги Джорджа Орвелла</h2>
+    <pre id="books-by-orwell"></pre>
+
+    <h2>Книги з високим рейтингом</h2>
+    <pre id="top-rated-books"></pre>
+
+    <script>
+        // Масив об'єктів книг
+        const books = [
+            { title: "The Catcher in the Rye", author: "J.D. Salinger", year: 1951, rating: 4.2, isRead: true },
+            { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960, rating: 4.8, isRead: true },
+            { title: "1984", author: "George Orwell", year: 1949, rating: 4.6, isRead: false },
+            { title: "Pride and Prejudice", author: "Jane Austen", year: 1813, rating: 4.4, isRead: true },
+            { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925, rating: 4.0, isRead: false },
+            { title: "Brave New World", author: "Aldous Huxley", year: 1932, rating: 3.9, isRead: true },
+        ];
+
+        // Функції для роботи з даними про книги
+        function getUnreadBooks(books) {
+            return books
+                .filter(book => !book.isRead)
+                .map(book => book.title);
+        }
+
+        function getBooksByAuthor(books, author) {
+            return books
+                .filter(book => book.author === author)
+                .sort((a, b) => a.year - b.year);
+        }
+
+        function getTopRatedBooks(books) {
+            return books
+                .filter(book => book.rating > 4)
+                .sort((a, b) => b.rating - a.rating);
+        }
+
+        // Вивід результатів у HTML
+        document.getElementById('unread-books').textContent = JSON.stringify(getUnreadBooks(books), null, 2);
+        document.getElementById('books-by-orwell').textContent = JSON.stringify(getBooksByAuthor(books, "George Orwell"), null, 2);
+        document.getElementById('top-rated-books').textContent = JSON.stringify(getTopRatedBooks(books), null, 2);
+    </script>
+</body>
+</html>

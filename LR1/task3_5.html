@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завдання 3.5 - Введення інформації при наведенні ПІ21-03 Гавадз</title>
+    <script>
+        function askForInfo() {
+            // Запитуємо інформацію у користувача
+            var userInput = prompt("Будь ласка, введіть вашу інформацію:");
+
+            // Виводимо інформацію у діалоговому вікні
+            if (userInput) {
+                alert("Ваша інформація: " + userInput);
+            } else {
+                alert("Ви не ввели інформацію.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Завдання 3.5</h1>
+    <hr>
+    <a href="#" onMouseover="askForInfo();">Наведіть на мене, щоб ввести інформацію!</a>
+</body>
+</html>

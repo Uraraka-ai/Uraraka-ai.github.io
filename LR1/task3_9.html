@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завдання 3.9 - Діалогове вікно confirm ПІ21-03 Гавадза</title>
+    <script>
+        function showConfirmDialog() {
+            // Відображаємо діалогове вікно з кнопками "Ок" і "Відміна"
+            var userResponse = confirm("Чи хочете ви продовжити?");
+
+            // Перевіряємо, яка кнопка була натиснута
+            if (userResponse) {
+                // Кнопка "Ок" натиснута
+                document.body.innerHTML += "<p>Ви натиснули 'Ок'.</p>";
+            } else {
+                // Кнопка "Відміна" натиснута
+                document.body.innerHTML += "<p>Ви натиснули 'Відміна'.</p>";
+            }
+        }
+    </script>
+</head>
+<body onload="showConfirmDialog();">
+    <h1>Завдання 3.9</h1>
+    <hr>
+</body>
+</html>

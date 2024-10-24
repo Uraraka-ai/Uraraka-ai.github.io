@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бібліотека</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        #libraryDisplay {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Моя Бібліотека</h1>
+    <button id="displayButton">Показати книги</button>
+    <div id="libraryDisplay"></div>
+
+    <script>
+        // Створення масиву книг
+        const library = [
+            {
+                title: "1984",
+                author: "George Orwell",
+                year: 1949,
+                bookInfo: function() {
+                    return `${this.title} by ${this.author}, published in ${this.year}`;
+                }
+            },
+            {
+                title: "To Kill a Mockingbird",
+                author: "Harper Lee",
+                year: 1960,
+                bookInfo: function() {
+                    return `${this.title} by ${this.author}, published in ${this.year}`;
+                }
+            },
+            {
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                year: 1925,
+                bookInfo: function() {
+                    return `${this.title} by ${this.author}, published in ${this.year}`;
+                }
+            }
+        ];
+
+        // Функція для відображення інформації про всі книги
+        function displayLibrary() {
+            const displayElement = document.getElementById('libraryDisplay');
+            displayElement.innerHTML = ''; // Очищення перед виводом
+
+            library.forEach(book => {
+                const bookInfo = document.createElement('p');
+                bookInfo.textContent = book.bookInfo();
+                displayElement.appendChild(bookInfo);
+            });
+
+            // Додавання нової книги
+            library.push({
+                title: "Brave New World",
+                author: "Aldous Huxley",
+                year: 1932,
+                bookInfo: function() {
+                    return `${this.title} by ${this.author}, published in ${this.year}`;
+                }
+            });
+        }
+
+        // Додавання обробника події для кнопки
+        document.getElementById('displayButton').addEventListener('click', displayLibrary);
+    </script>
+
+</body>
+</html>

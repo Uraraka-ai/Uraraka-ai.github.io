@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистичний Аналіз Працівників</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Аналіз Працівників</h1>
+    <button id="calculate">Обчислити Середню Зарплату та Найбільш Досвідченого Працівника</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const employees = [
+            { name: "Іван", position: "Менеджер", salary: 50000, years: 5 },
+            { name: "Олена", position: "Розробник", salary: 60000, years: 3 },
+            { name: "Петро", position: "Дизайнер", salary: 45000, years: 4 },
+            { name: "Марія", position: "Аналитик", salary: 70000, years: 6 },
+            { name: "Сергій", position: "Керівник", salary: 80000, years: 8 }
+        ];
+
+        function getAverageSalary(employees) {
+            const totalSalary = employees.reduce((sum, employee) => sum + employee.salary, 0);
+            return totalSalary / employees.length;
+        }
+
+        function findMostExperiencedEmployee(employees) {
+            return employees.reduce((mostExperienced, employee) => {
+                return (employee.years > mostExperienced.years) ? employee : mostExperienced;
+            });
+        }
+
+        document.getElementById("calculate").addEventListener("click", function() {
+            const averageSalary = getAverageSalary(employees);
+            const mostExperiencedEmployee = findMostExperiencedEmployee(employees);
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <h2>Результати:</h2>
+                <p><strong>Середня зарплата:</strong> ${averageSalary.toFixed(2)} грн</p>
+                <p><strong>Найбільш досвідчений працівник:</strong> ${mostExperiencedEmployee.name}, ${mostExperiencedEmployee.position}, ${mostExperiencedEmployee.years} років на посаді</p>
+            `;
+        });
+    </script>
+
+</body>
+</html>

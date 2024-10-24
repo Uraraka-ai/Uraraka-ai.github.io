@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опитування</title>
+</head>
+<body>
+
+    <form id="surveyForm">
+        <label for="nameInput">Введіть ваше ім'я:</label>
+        <input type="text" id="nameInput" placeholder="Впишіть сюди своє ім'я" required>
+        <br>
+
+        <p>Що більше подобається вам?</p>
+        <label>
+            <input type="checkbox" name="dessert" value="Морозиво" onclick="updateSelection()"> Морозиво
+        </label>
+        <label>
+            <input type="checkbox" name="dessert" value="Шоколад" onclick="updateSelection()"> Шоколад
+        </label>
+        <br>
+
+        <button type="submit">Відправити</button>
+    </form>
+
+    <script>
+        function updateSelection() {
+            const checkboxes = document.querySelectorAll('input[name="dessert"]:checked');
+            const selections = Array.from(checkboxes).map(checkbox => checkbox.value);
+            if (selections.length > 0) {
+                console.log(`Ви обрали: ${selections.join(', ')}`);
+            }
+        }
+
+        document.getElementById('nameInput').addEventListener('focus', function() {
+            console.log("Впишіть сюди своє ім'я");
+        });
+
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Запобігаємо стандартному відправленню форми
+            alert('Дякуємо за участь в опитуванні!');
+        });
+    </script>
+
+</body>
+</html>

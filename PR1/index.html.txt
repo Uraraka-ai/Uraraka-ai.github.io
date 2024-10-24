@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="left">
+        <div class="logo">Psocial</div> <!-- Додано для логотипу або тексту -->
+        <div class="social-buttons">
+            <button class="linkedin">Sign up with LinkedIn</button>
+            <button class="twitter">Sign up with Twitter</button>
+            <button class="facebook">Sign up with Facebook</button>
+        </div>
+    </div>
+    <div class="right">
+        <h2>Sign Up</h2>
+        <p>Get started absolutely free</p>
+        <form>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <div>
+                <input type="checkbox">
+                <label>Creating an account means you're okay with our Terms of Service, Privacy Policy, and default Notification Settings</label>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</div>
