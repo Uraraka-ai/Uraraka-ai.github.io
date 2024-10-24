@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Час оновлення</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .clock {
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="clock"></div>
+
+    <script>
+        let secondsElapsed = 0; // Лічильник для відстеження пройденого часу
+
+        function formatTime(value) {
+            return value < 10 ? '0' + value : value; // Додаємо "0", якщо значення менше 10
+        }
+
+        function updateClock() {
+            const now = new Date(); // Отримуємо поточний час
+            const hours = formatTime(now.getHours());
+            const minutes = formatTime(now.getMinutes());
+            const seconds = formatTime(now.getSeconds());
+            const clockElement = document.getElementById('clock');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`; // Форматуємо час
+
+            secondsElapsed += 5; // Додаємо 5 секунд до лічильника
+            if (secondsElapsed >= 30) { // Перевірка, чи пройшло 30 секунд
+                window.close(); // Закриваємо вікно
+            }
+        }
+
+        setInterval(updateClock, 5000); // Оновлюємо годинник кожні 5 секунд
+        updateClock(); // Виклик функції для початкового відображення
+    </script>
+
+</body>
+</html>

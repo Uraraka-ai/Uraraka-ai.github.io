@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефект друкарської машинки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        #output {
+            font-size: 24px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 80%;
+            text-align: left;
+            white-space: pre-wrap; /* Зберігає пробіли та переноси рядків */
+        }
+        #inputField {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+    <input type="text" id="inputField" placeholder="Введіть фразу...">
+    <button id="startButton">Почати набір</button>
+
+    <script>
+        const outputElement = document.getElementById('output');
+        const inputField = document.getElementById('inputField');
+        const startButton = document.getElementById('startButton');
+        let phrase = "Це приклад фрази з ефектом друкарської машинки."; // За замовчуванням
+        let index = 0; // Індекс символа для виведення
+
+        startButton.addEventListener('click', () => {
+            phrase = inputField.value || phrase; // Використовуємо введену фразу або за замовчуванням
+            outputElement.textContent = ''; // Очищаємо вивід
+            index = 0; // Скидаємо індекс
+
+            const typingInterval = setInterval(() => {
+                if (index < phrase.length) {
+                    outputElement.textContent += phrase[index]; // Додаємо символ
+                    index++; // Переходимо до наступного символа
+                } else {
+                    clearInterval(typingInterval); // Зупиняємо інтервал, якщо всі символи виведено
+                }
+            }, 100); // Затримка 100 мс між символами
+        });
+    </script>
+
+</body>
+</html>

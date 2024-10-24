@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 400px;
+            background-color: #f9f9f9;
+        }
+        .captcha-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .digit {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            margin: 0 2px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 5px;
+            width: 100px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CAPTCHA</h1>
+    <div class="captcha-container" id="captcha"></div>
+    <input type="text" id="userInput" placeholder="Введіть цифри" maxlength="4">
+    <button onclick="checkCaptcha()">Перевірити</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        let captchaNumber = '';
+
+        function generateCaptcha(length) {
+            captchaNumber = '';
+            const captchaContainer = document.getElementById('captcha');
+            captchaContainer.innerHTML = ''; // Очищуємо попереднє значення
+
+            for (let i = 0; i < length; i++) {
+                const digit = Math.floor(Math.random() * 10); // Генеруємо цифру від 0 до 9
+                captchaNumber += digit; // Додаємо цифру до рядка
+                const digitSpan = document.createElement('span');
+                digitSpan.className = 'digit';
+                digitSpan.textContent = digit; // Відображаємо цифру
+                captchaContainer.appendChild(digitSpan);
+            }
+        }
+
+        function checkCaptcha() {
+            const userInput = document.getElementById('userInput').value;
+            const resultDisplay = document.getElementById('result');
+            if (userInput === captchaNumber) {
+                resultDisplay.textContent = 'Правильно!';
+                resultDisplay.style.color = 'green';
+            } else {
+                resultDisplay.textContent = 'Неправильно! Спробуйте ще раз.';
+                resultDisplay.style.color = 'red';
+                generateCaptcha(4); // Генеруємо нову CAPTCHA при неправильному введенні
+                document.getElementById('userInput').value = ''; // Очищаємо поле вводу
+            }
+        }
+
+        // Ініціалізуємо CAPTCHA з 4 цифрами
+        generateCaptcha(4);
+    </script>
+
+</body>
+</html>
