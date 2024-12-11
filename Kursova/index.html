@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barbersop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="./img/icon%20razor.png" sizes="16x16">
+    <link rel="shortcut icon" href="./img/icon%20razor.png" type="image/x-icon">
+    <meta name="description" content="Найкращий в світі барбершоп">
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Записатися на процедури</h2>
+            <p>Будь ласка, заповніть форму нижче:</p>
+            <form id="booking-form">
+                <input type="text" placeholder="Ваше ім'я" required>
+                <input type="email" placeholder="Ваш email" required>
+                <input type="tel" placeholder="Ваш телефон" required>
+                <textarea placeholder="Додаткові коментарі"></textarea>
+                <button type="submit">Відправити</button>
+            </form>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="main-stor">Головна</a>
+                <a href="#services">Послуги</a>
+                <a href="./aboutas/index.html">Про нас</a>
+                <a href="./blog/index.html">Блог</a>
+                <a href="#footer">Контакти</a>
+            </div>
+            <a href="#" class="book-btn">Записатися</a>
+        </nav>
+    </header>
+    <main class="back-main">
+        <img src="./img/Logo.png" class="logotype" alt="img">
+        <h1>Ласкаво просимо</h1>
+    </main>
+    <section class="services-section" id="services">
+        <div class="services">
+            <h2>Наші процедури</h2>
+            <h3>Послуги</h3>
+        </div>
+        <div class="services-grid">
+            <article class="service-item">
+                <div class="service-icon">
+                    <img src="./img/icon%20scissors.png" alt="Іконка стрижки">
+                </div>
+                <h4>Стрижка & борода</h4>
+                <p>Індивідуальний стиль та догляд. Професійний підхід до вашого образу.</p>
+            </article>
+            <article class="service-item">
+                <div class="service-icon">
+                    <img src="./img/icon%20razor.png" alt="Іконка гоління">
+                </div>
+                <h4>Голыння & Стрижка</h4>
+                <p>Бездоганна майстерність для ідеальної стрижки та гладкого гоління.</p>
+            </article>
+            <article class="service-item">
+                <div class="service-icon">
+                    <img src="./img/icon%20beard.png" alt="Іконка догляду за шкірою">
+                </div>
+                <h4>Догляд за бородою</h4>
+                <p>Комплексний догляд для свіжості та здоров'я бороди.</p>
+            </article>
+            <article class="service-item">
+                <div class="service-icon">
+                    <img src="./img/icon_%20ustache.png" alt="Іконка вус">
+                </div>
+                <h4>Окантовування вусів</h4>
+                <p>Створіть незабутні спогади з нагоди свого великого дня.</p>
+            </article>
+        </div>
+        <a href="./services/index.html" class="serv-btn">Дослідити зараз</a>
+    </section>
+    <div class="features-section">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="./img/iconrazor2.png" alt="Іконка1">
+            </div>
+            <div class="feature-content">
+                <span class="feature-number">2500</span>
+                <p>Голінь</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="./img/iconscissors2.png" alt="Іконка2">
+            </div>
+            <div class="feature-content">
+                <span class="feature-number">4500</span>
+                <p>Стрижок</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="./img/iconbarbershop.png" alt="Іконка3">
+            </div>
+            <div class="feature-content">
+                <span class="feature-number">23</span>
+                <p>Відкритих магазинів</p>
+            </div>
+        </div>
+    </div>
+    <section class="discount-section">
+        <div class="discount-text">
+            <h2 class="discount-title">25% знижка</h2>
+            <p class="discount-description">
+                Отримайте вигідну знижку 25% на всі наші послуги!
+                Порадуйте себе стильним виглядом та новими відчуттями.
+            </p>
+            <a href="four.html" class="book-now-btn">Забронювати зараз</a>
+        </div>
+        <div class="discount-image">
+            <img src="./img/sale-img.png" alt="Зображення знижки">
+        </div>
+    </section>
+    <section class="testimonials-section">
+        <h2>Що про нас кажуть</h2>
+        <h3>Відгуки клієнтів</h3>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <img src="./img/client1.png" alt="Клієнт1" class="testimonial-image">
+                <p class="testimonial-text">Чудове обслуговування та професійний підхід! Мій стиль змінився на краще.</p>
+                <h4 class="client-name">Глен Спаркл, Маямі</h4>
+            </article>
+            <article class="testimonial-card">
+                <img src="./img/client2.png" alt="Клієнт 2" class="testimonial-image">
+                <p class="testimonial-text">Найкраще місце для стрижки! Команда справжніх професіоналів, які вміють слухати своїх клієнтів.</p>
+                <h4 class="client-name">Майкл Річардс, Каліфорнія</h4>
+            </article>
+            <article class="testimonial-card">
+                <img src="./img/client3.png" alt="Клієнт 3" class="testimonial-image">
+                <p class="testimonial-text">Відмінний сервіс і затишна атмосфера. Тут я завжди отримую стильний вигляд і позитивні емоції.</p>
+                <h4 class="client-name">Джон Худ, Нью-Йорк</h4>
+            </article>
+        </div>
+    </section>
+    <section class="brands-section">
+        <div class="brands-text">
+            <h2>Бренди, які ми представляємо</h2>
+            <p>Ми працюємо з провідними брендами, щоб забезпечити вам найкращі продукти для догляду та стайлінгу.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="brands-image">
+            <img src="./img/Logos.png" alt="Бренди" class="brands-photo">
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer-content">
+            <h2>Зв'язатися з нами</h2>
+            <p>Якщо у вас виникли питання або ви хочете записатися на прийом, не соромтеся звертатися! Напишіть нам, і ми з радістю допоможемо вам обрати найкращі послуги для вашого стилю.</p>
+            <div class="footer-blocks">
+                <div class="footer-block">
+                    <img src="./img/iconlocation.png" alt="Іконка 1" class="footer-icon">
+                    <h4>Адреса</h4>
+                    <p>304 вул.Кардинальна Центр Дорчестера, MA 02124</p>
+                </div>
+                <div class="footer-block">
+                    <img src="./img/iconenvelope.png" alt="Іконка 2" class="footer-icon">
+                    <h4>Емеіл</h4>
+                    <p>info@company.com</p>
+                </div>
+                <div class="footer-block">
+                    <img src="./img/iconphone.png" alt="Іконка 3" class="footer-icon">
+                    <h4>Телефон</h4>
+                    <p>(+63) 555 1212<br>(+63) 555 1212</p>
+                </div>
+                <div class="footer-block">
+                    <img src="./img/iconclock.png" alt="Іконка 4" class="footer-icon">
+                    <h4>Робочі Години</h4>
+                    <p>Пн - Пт: 10:00 - 18:00<br>Сб - Нд: 10:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="copyright">© Copyright Barbershop 2024</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
