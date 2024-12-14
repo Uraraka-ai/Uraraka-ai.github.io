@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Validation</title>
+    <style>
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        input.valid {
+            background-color: lightgreen;
+        }
+        input.invalid {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h3>Enter a number (1-100):</h3>
+    <input type="text" id="numberInput">
+
+    <script>
+        const input = document.getElementById("numberInput");
+
+        input.addEventListener("blur", function () {
+            const value = parseInt(input.value);
+            if (!isNaN(value) && value >= 1 && value <= 100) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+            }
+        });
+    </script>
+</body>
+</html>
